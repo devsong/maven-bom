@@ -15,43 +15,66 @@ javaPlatform {
 }
 
 dependencies {
-    //在constraints块中定义依赖版本约束
-    constraints{
-        api "org.springframework.boot:spring-boot-starter-web:$springBootStarterVersion"
-        api "org.springframework.boot:spring-boot-starter-aop:$springBootStarterVersion"
-        api "org.springframework.boot:spring-boot-autoconfigure:$springBootStarterVersion"
-        api "org.springframework.boot:spring-boot-starter-test:$springBootStarterVersion"
-        api "org.apache.curator:curator-recipes:$curatorRecipesVersion"
-        api "org.apache.zookeeper:zookeeper:$zookeeperVersion"
-        api "org.dom4j:dom4j:$dom4jVersion"
-        api "org.apache.commons:commons-pool2:$commonsPool2Version"
-        api "com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:$nacosSpringCloudVersion"
-        api "com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:$nacosSpringCloudVersion"
-        api "org.springframework.cloud:spring-cloud-starter-openfeign:$springCloudStarterOpenfeignVersion"
-        api "org.springframework.cloud:spring-cloud-starter-loadbalancer:$springCloudStarterOpenfeignVersion"
-        api "org.springframework.cloud:spring-cloud-starter-bootstrap:$springCloudStarterOpenfeignVersion"
-        api "org.springframework.boot:spring-boot-starter-actuator:$springBootStarterVersion"
-        api "org.apache.tomcat:tomcat-jdbc:$tomcatJdbcVersion"
-        api "com.github.ben-manes.caffeine:caffeine:$caffeineVersion"
-        api "org.redisson:redisson-spring-boot-starter:$redissonSpringBootStarterVersion"
-        api "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
-        api "org.mapstruct:mapstruct:$mapstructProcessorVersion"
-        api "org.mapstruct:mapstruct-processor:$mapstructProcessorVersion"
-        api "javax.validation:validation-api:$validationApiVersion"
-        api "org.flywaydb:flyway-core:$flywayVersion"
-        api "org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:$springCloudStarterCircuitbreakerResilience4jVersion"
-        api "io.github.resilience4j:resilience4j-bulkhead:$resilience4jBulkheadVersion"
-        api "org.projectlombok:lombok:$lombokVersion"
-        api "org.springframework.boot:spring-boot-starter-test:$springBootStarterVersion"
-        api "org.junit.jupiter:junit-jupiter-api:$junitVersion"
-        api "org.apache.commons:commons-lang3:$commonsLang3Version"
-        api "org.redisson:redisson-spring-boot-starter:$redissonVersion"
+    constraints {
+        api("org.elasticsearch:elasticsearch:${elasticsearchVersion}")
+        api("org.elasticsearch.client:transport:${elasticsearchVersion}")
+        api("org.elasticsearch.client:elasticsearch-rest-client:${elasticsearchVersion}") {
+            // exclude group: 'commons-logging', module: 'commons-logging'
+        }
+        api("org.elasticsearch.client:elasticsearch-rest-client-sniffer:${elasticsearchVersion}") {
+            // exclude group: 'commons-logging', module: 'commons-logging'
+        }
+        api("org.elasticsearch.client:elasticsearch-rest-high-level-client:${elasticsearchVersion}")
+        api("org.springframework.boot:spring-boot-dependencies:${springBootVerison}")
+        api("org.apache.dubbo:dubbo:${dubboVersion}")
+        api("org.apache.commons:commons-lang3:${commonLang3Version}")
+        api("redis.clients:jedis:${jedisVersion}")
+        api("io.netty:netty-all:${nettyVersion}")
+        api("org.apache.curator:curator-framework:${curatorVersion}") {
+            // exclude group: 'org.apache.zookeeper', module: 'zookeeper'
+        }
+        api("org.apache.curator:curator-recipes:${curatorVersion}") {
+            // exclude group: 'org.apache.zookeeper', module: 'zookeeper'
+        }
+        api("org.apache.zookeeper:zookeeper:${zookeeperVersion}") {
+            // exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+            // exclude group: 'log4j', module: 'log4j'
+            // exclude group: 'io.netty', module: '*'
+        }
+        api("org.apache.httpcomponents:httpclient:${httpclientVersion}")
+        api("com.alibaba:fastjson:${fastjsonVersion}")
+        api("com.zaxxer:HikariCP:${hikaricpVersion}")
+        api("org.apache.commons:commons-dbcp2:${dbcpVersion}")
+        api("commons-io:commons-io:${commonsIoVersion}")
+        api("pro.fessional:kaptcha:${kaptchaVersion}")
+        api("org.ehcache:ehcache:${ehcacheVersion}")
+        api("com.google.zxing:core:${zxingVersion}")
+        api("org.apache.velocity:velocity:${velocityVersion}")
+        api("cglib:cglib-nodep:${cglibNodepVersion}")
+        api("com.fasterxml.jackson.core:jackson-core:${jacksonVersion}")
+        api("com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}")
+        api("com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}")
+        api("com.ctrip.framework.apollo:apollo-client:${apolloVersion}")
+        api("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:${nacosSpringCloudStaterVersion}")
+        api("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:${nacosSpringCloudStaterVersion}")
+        api("com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}")
+        api("com.google.guava:guava:${guavaVersion}")
+        api("org.apache.shardingsphere:sharding-jdbc-spring-boot-starter:${shardingsphereVersion}")
+        api("com.github.xiaoymin:knife4j-spring-boot-starter:${knife4jVersion}")
+        api("com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}")
+        api("org.apache.dubbo:dubbo-spring-boot-starter:${dubboVersion}")
+        api("org.dom4j:dom4j:${dom4jVersion}")
+        api("org.bouncycastle:bcprov-jdk15on:${bcprovVersion}")
+        api("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
+        api("org.mapstruct:mapstruct-processor:${mapstructVersion}")
+        api("org.mapstruct:mapstruct:${mapstructVersion}")
+        api("org.redisson:redisson-spring-boot-starter:${redissonVersion}")
+        api("org.codehaus.groovy:groovy:${groovyVersion}")
     }
-
 }
 
-publishing{
-    publications{
+publishing {
+    publications {
         nexus(MavenPublication) {
             //通过java-platform生成BOM
             from components.javaPlatform

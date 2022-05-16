@@ -352,6 +352,7 @@
                 <classifier>indy</classifier>
             </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <repositories>
