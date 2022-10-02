@@ -58,6 +58,7 @@
         <redisson.version>3.16.8</redisson.version>
         <assertj-core.version>3.23.1</assertj-core.version>
         <alibaba-spring-context.version>1.0.11</alibaba-spring-context.version>
+        <nacos-client.version>2.1.1</nacos-client.version>
     </properties>
 
     <dependencyManagement>
@@ -114,18 +115,6 @@
                 <groupId>org.elasticsearch.client</groupId>
                 <artifactId>elasticsearch-rest-high-level-client</artifactId>
                 <version>${elasticsearch.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>${dubbo.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-registry-nacos</artifactId>
-                <version>${dubbo.version}</version>
             </dependency>
 
             <dependency>
@@ -366,6 +355,12 @@
                 <groupId>com.alibaba.spring</groupId>
                 <artifactId>spring-context-support</artifactId>
                 <version>${alibaba-spring-context.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos-client.version}</version>
             </dependency>
         </dependencies>
 
