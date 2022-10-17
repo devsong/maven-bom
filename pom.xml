@@ -24,20 +24,17 @@
         <netty.version>4.1.68.Final</netty.version>
         <jedis.version>2.9.0</jedis.version>
         <common-lang3.version>3.12.0</common-lang3.version>
-        <common-io.version>2.5</common-io.version>
         <common-codec.version>1.15</common-codec.version>
+        <commons-io.version>2.7</commons-io.version>
         <httpclient.version>4.5.13</httpclient.version>
         <fastjson.version>1.2.75</fastjson.version>
-        <shiro.version>1.4.0</shiro.version>
-        <mapper-starter.version>2.1.0</mapper-starter.version>
-        <commons.io.version>2.7</commons.io.version>
         <velocity.version>1.7</velocity.version>
         <kaptcha.version>2.3.3</kaptcha.version>
         <ehcache.version>3.10.2</ehcache.version>
         <zxing.version>3.5.0</zxing.version>
         <cglib-nodep.version>3.2.12</cglib-nodep.version>
         <mysql.version>8.0.17</mysql.version>
-        <jackson.version>2.10.0</jackson.version>
+        <jackson.version>2.12.7</jackson.version>
         <apollo.version>1.5.0</apollo.version>
         <nacos-spring-cloud-stater.version>2021.1</nacos-spring-cloud-stater.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
@@ -59,7 +56,8 @@
         <assertj-core.version>3.23.1</assertj-core.version>
         <alibaba-spring-context.version>1.0.11</alibaba-spring-context.version>
         <nacos-client.version>2.1.1</nacos-client.version>
-        <logstash-json-encoder.version>7.2</logstash-json-encoder.version>
+        <logstash-logback-encoder.version>7.2</logstash-logback-encoder.version>
+        <transmittable-thread-local.version>2.14.0</transmittable-thread-local.version>
     </properties>
 
     <dependencyManagement>
@@ -85,11 +83,13 @@
                 <artifactId>elasticsearch</artifactId>
                 <version>${elasticsearch.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.elasticsearch.client</groupId>
                 <artifactId>transport</artifactId>
                 <version>${elasticsearch.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.elasticsearch.client</groupId>
                 <artifactId>elasticsearch-rest-client</artifactId>
@@ -101,6 +101,7 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+
             <dependency>
                 <groupId>org.elasticsearch.client</groupId>
                 <artifactId>elasticsearch-rest-client-sniffer</artifactId>
@@ -112,6 +113,7 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+
             <dependency>
                 <groupId>org.elasticsearch.client</groupId>
                 <artifactId>elasticsearch-rest-high-level-client</artifactId>
@@ -207,7 +209,7 @@
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>${commons.io.version}</version>
+                <version>${commons-io.version}</version>
             </dependency>
 
             <dependency>
@@ -367,7 +369,13 @@
             <dependency>
                 <groupId>net.logstash.logback</groupId>
                 <artifactId>logstash-logback-encoder</artifactId>
-                <version>${logstash-json-encoder.version}</version>
+                <version>${logstash-logback-encoder.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
             </dependency>
 
         </dependencies>
