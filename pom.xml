@@ -6,7 +6,10 @@
     <groupId>io.github.devsong</groupId>
     <artifactId>maven-bom</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
+    <url>https://github.com/devsong/maven-bom</url>
+    <description>common maven dependency file for custom project</description>
+    <name>maven-bom</name>
 
     <properties>
         <gpg.keyname>A6627EB69F51C1CF</gpg.keyname>
